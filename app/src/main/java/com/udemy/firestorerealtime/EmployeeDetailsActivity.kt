@@ -1,5 +1,6 @@
 package com.udemy.firestorerealtime
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -23,16 +24,36 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_employee_details)
         initView()
         setValuesOnView()
-        openUpdateDialog(
-            intent.getStringExtra("empId").toString(),
-            intent.getStringExtra("empName").toString()
+        btnUpdate.setOnClickListener(){
+            openUpdateDialog(
+                intent.getStringExtra("empId").toString(),
+                intent.getStringExtra("empName").toString()
 
-        )
-
+            )
+        }
+        btnDelete.setOnClickListener(){
+            deleteRecord(intent.getStringExtra("empId").toString())
+        }
 
     }
 
+    private fun deleteRecord(id: String) {
 
+        val dbRef = FirebaseDatabase.getInstance().getReference("Employee").child(id)
+        val item = dbRef.removeValue()
+
+        item.addOnCompleteListener {
+            Toast.makeText(this,"Deleted",Toast.LENGTH_LONG).show()
+            val intent = Intent(this@EmployeeDetailsActivity,FetchingActivity::class.java)
+            finish()
+            startActivity(intent)
+        }.addOnFailureListener(){err->
+            Toast.makeText(this,"${err.message}",Toast.LENGTH_LONG).show()
+
+
+        }
+
+    }
 
     private fun initView() {
         idText = findViewById(R.id.tvEmpId)
@@ -64,7 +85,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         emName.setText(intent.getStringExtra("empName").toString())
         emAge.setText(intent.getStringExtra("empAge").toString())
         emSalary.setText(intent.getStringExtra("empSalary").toString())
-       myDialog.setTitle("Updating $emName Record")
+       myDialog.setTitle("Updating $empName Record")
 
         val alertDialog = myDialog.create()
         alertDialog.show()
