@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "347985954932",
+    "project_id": "fir-realdatabase-24582",
+    "storage_bucket": "fir-realdatabase-24582.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347985954932:android:a51b74b199f73349baa921",
+        "android_client_info": {
+          "package_name": "com.udemy.firestorerealtime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDR4RRXN8UUy9xxiaxSWsfQMjquUa7fQMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#38233C"
+    android:orientation="vertical"
+    android:layout_margin="13dp"
+    tools:context=".InsertActivity">
+
+    <EditText
+        android:id="@+id/etname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:hint="Enter name"
+        android:padding="17dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"
+        android:background="#C9EFF4"
+        android:textSize="19dp"
+        android:layout_marginEnd="10dp"/>
+    <EditText
+        android:id="@+id/etdage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:hint="Enter age"
+        android:padding="17dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"
+        android:background="#C9EFF4"
+        android:textSize="19dp"
+        android:layout_marginEnd="10dp"/>
+    <EditText
+        android:id="@+id/etdSalary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="9dp"
+        android:hint="Enter salary"
+        android:padding="17dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/black"
+        android:background="#C9EFF4"
+        android:textSize="19dp"
+        android:layout_marginEnd="10dp"/>
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="60dp"
+        android:text="Save"
+        android:backgroundTint="#06CFBC"
+        />
+
+
+</LinearLayout>
