@@ -17,7 +17,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
     private lateinit var salaryText :TextView
     private lateinit var btnUpdate :Button
     private lateinit var btnDelete :Button
-
+    private lateinit var backbtn:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +33,11 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         }
         btnDelete.setOnClickListener(){
             deleteRecord(intent.getStringExtra("empId").toString())
+        }
+
+        backbtn.setOnClickListener(){
+            onBackPressed()
+
         }
 
     }
@@ -62,6 +67,7 @@ class EmployeeDetailsActivity : AppCompatActivity() {
         salaryText = findViewById(R.id.tvEmpSalary)
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
+        backbtn = findViewById(R.id.backBtn)
     }
 
     private fun setValuesOnView()
